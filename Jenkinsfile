@@ -19,6 +19,11 @@ pipeline {
           junit 'target/surefire-reports/*.xml' 
           }
     }
+     stage('jacoco'){
+        steps {
+           jacoco()
+        }
+     }
   }
 }
   
