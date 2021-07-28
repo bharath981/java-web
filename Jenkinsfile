@@ -35,7 +35,11 @@ pipeline {
                
                     // some block
                     sh """
-                    ${sonarscanner}/bin/sonar-scanner
+                    ${sonarscanner}/bin/sonar-scanner -Dsonar.projectKey=MyWebApp \
+                    -Dsonar.projectName=MyWebApp \
+                    -Dsonar.projectVersion=1.0 \
+                    -Dsonar.sources=./src/main/java \
+                    -Dsonar.language=java
                 
                     """
                 }
