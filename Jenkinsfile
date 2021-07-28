@@ -41,8 +41,8 @@ pipeline {
                     -Dsonar.sources=./src/main/java \
                     -Dsonar.language=java
                     -Dsonar.java.binaries='target/classes'
-                    -Dsonar.sourceEncoding= 'UTF-8'
-                    -Dsonar.sonar.coverage.exclusions= '**/target/**'
+                    -Dsonar.sourceEncoding='UTF-8'
+                    -Dsonar.sonar.coverage.exclusions='**/target/**'
                                  
                     """
                 }
