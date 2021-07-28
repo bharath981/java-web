@@ -24,6 +24,24 @@ pipeline {
            jacoco()
         }
      }
+     stage('Code Quality Check (Sonarqube)')
+     {
+          steps
+          {
+             script
+             {
+               def sonarscanner = tool 'sonar_scanner'
+               withSonarQubeEnv(credentialsId: 'sonar-cred') {
+               
+                    // some block
+                    sh """
+                    ${sonarscanner}/bin/sonar-scanner
+                
+                    """
+                }
+             }
+          }
+        }
   }
 }
   
